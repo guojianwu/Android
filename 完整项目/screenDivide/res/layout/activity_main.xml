@@ -1,0 +1,43 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity" >
+
+    <Button 
+        android:layout_width="match_parent"
+        android:layout_height="0sp"
+        android:layout_weight="1"
+        android:text="上" />
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="0sp"
+        android:layout_weight="4"
+        android:orientation="horizontal"
+        >
+           <Button 
+		        android:layout_width="0sp"
+		        android:layout_height="match_parent"
+		        android:layout_weight="1"
+		        android:text="左" />
+           <Button 
+		        android:layout_width="0sp"
+		        android:layout_height="match_parent"
+		        android:layout_weight="4"
+		        android:text="中" />
+           <Button 
+		        android:layout_width="0sp"
+		        android:layout_height="match_parent"
+		        android:layout_weight="1"
+		        android:text="右" />
+        
+    </LinearLayout>
+    
+    <Button 
+        android:layout_width="match_parent"
+        android:layout_height="0sp"
+        android:layout_weight="1"
+        android:text="下" />
+
+</LinearLayout>

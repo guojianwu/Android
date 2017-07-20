@@ -1,0 +1,200 @@
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/coursebg"
+    tools:context=".MainActivity" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/title_bg"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+
+        <Spinner
+            android:id="@+id/spanner1"
+            android:layout_width="100sp"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/addCourse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="150sp"
+            android:background="@drawable/add_btn"
+            android:text="+"
+            android:textColor="#ddd"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <TableRow
+        style="@style/rowStyle"
+        android:layout_weight="0.5" >
+
+        <TextView
+            style="@style/text01"
+            android:layout_weight="2" 
+            android:background="@android:color/transparent"/>
+        <TextView 
+            style="@style/text01"
+             android:text="周一"
+             android:background="@drawable/border_white"/>
+         <TextView 
+            style="@style/text01"
+             android:text="周二"
+             android:background="@drawable/border_halfwhite"/>
+          <TextView 
+            style="@style/text01"
+             android:text="周三"
+             android:background="@drawable/border_white"/>
+           <TextView 
+            style="@style/text01"
+             android:text="周四"
+             android:background="@drawable/border_halfwhite"/>
+            <TextView 
+            style="@style/text01"
+             android:text="周五"
+             android:background="@drawable/border_white"/>
+    </TableRow>
+
+    <TableRow style="@style/rowStyle" >
+        <TextView 
+            style="@style/text01"
+             android:layout_weight="2"
+             android:text="1-2"
+             android:background="@drawable/border_halfwhite"/>
+        <Button 
+           android:id="@+id/btn11"
+           style="@style/btn01"
+           />
+        <Button 
+           android:id="@+id/btn12"
+           style="@style/btn01"
+           />
+        <Button 
+           android:id="@+id/btn13"
+           style="@style/btn01"
+           />
+        <Button 
+           android:id="@+id/btn14"
+           style="@style/btn01"
+           />
+        <Button 
+           android:id="@+id/btn15"
+           style="@style/btn01"
+           />
+    </TableRow>
+    
+    <TableRow style="@style/rowStyle" >
+         <TextView 
+            style="@style/text01"
+             android:layout_weight="2"
+             android:text="3-4"
+             android:background="@drawable/border_white"/>
+        <Button 
+           android:id="@+id/btn21"
+           style="@style/btn01"
+           />
+        <Button 
+           android:id="@+id/btn22"
+           style="@style/btn01"
+           />
+        <Button 
+           android:id="@+id/btn23"
+           style="@style/btn01"
+           />
+        <Button 
+           android:id="@+id/btn24"
+           style="@style/btn01"
+           />
+        <Button 
+           android:id="@+id/btn25"
+           style="@style/btn01"
+           />
+    </TableRow>
+    
+    <TableRow style="@style/rowStyle" >
+         <TextView 
+            style="@style/text01"
+             android:layout_weight="2"
+             android:text="5-6"
+             android:background="@drawable/border_halfwhite"/>
+        <Button 
+           android:id="@+id/btn31"
+           style="@style/btn01"
+           />
+        <Button 
+           android:id="@+id/btn32"
+           style="@style/btn01"
+           />
+        <Button 
+           android:id="@+id/btn33"
+           style="@style/btn01"
+           />
+        <Button 
+           android:id="@+id/btn34"
+           style="@style/btn01"
+           />
+        <Button 
+           android:id="@+id/btn35"
+           style="@style/btn01"
+           />
+    </TableRow>
+    <TableRow style="@style/rowStyle" >
+         <TextView 
+            style="@style/text01"
+             android:layout_weight="2"
+             android:text="7-8"
+             android:background="@drawable/border_white"/>
+        <Button 
+           android:id="@+id/btn41"
+           style="@style/btn01"
+           />
+        <Button 
+           android:id="@+id/btn42"
+           style="@style/btn01"
+           />
+        <Button 
+           android:id="@+id/btn43"
+           style="@style/btn01"
+           />
+        <Button 
+           android:id="@+id/btn44"
+           style="@style/btn01"
+           />
+        <Button 
+           android:id="@+id/btn45"
+           style="@style/btn01"
+           />
+    </TableRow>
+    <TableRow style="@style/rowStyle" >
+         <TextView 
+            style="@style/text01"
+             android:layout_weight="2"
+             android:text="9-10"
+             android:background="@drawable/border_halfwhite"/>
+        <Button 
+           android:id="@+id/btn51"
+           style="@style/btn01"
+           />
+        <Button 
+           android:id="@+id/btn52"
+           style="@style/btn01"
+           />
+        <Button 
+           android:id="@+id/btn53"
+           style="@style/btn01"
+           />
+        <Button 
+           android:id="@+id/btn54"
+           style="@style/btn01"
+           />
+        <Button 
+           android:id="@+id/btn55"
+           style="@style/btn01"
+           />
+    </TableRow>
+
+</TableLayout>

@@ -1,0 +1,54 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#aabbcc"
+    tools:context=".MainActivity" >
+    
+    <TextView 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="景点介绍"
+        android:background="#ccbbaa"
+        android:gravity="center"
+        android:padding="10sp"
+        android:textSize="25sp"/>
+    <FrameLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+	    <com.example.myscenery.MyImageView 
+	         android:id="@+id/mImageView"
+	         android:layout_width="match_parent"
+             android:layout_height="150sp"
+	        >  
+	    </com.example.myscenery.MyImageView>
+	   <LinearLayout 
+	       android:id="@+id/mLinearLayout"
+	       android:layout_width="match_parent"
+	       android:layout_height="wrap_content"
+	       android:gravity="center_horizontal"
+	       android:orientation="horizontal"
+	       android:layout_marginTop="130sp">
+	       
+	   </LinearLayout>
+ </FrameLayout>
+      <TextView 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ccbbaa"
+        android:textSize="3sp"
+        android:text=" "/>
+      <!-- 列表 -->
+      <ListView 
+          android:id="@+id/mList"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:divider="#aaaaaa"
+          android:dividerHeight="3sp"/>
+
+
+    
+
+</LinearLayout>

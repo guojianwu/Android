@@ -1,0 +1,32 @@
+
+import java.io.File;
+import java.io.IOException;
+import java.io.RandomAccessFile;
+import java.util.Scanner;public class liu4_1 {	
+String s = "//home//ends//denglu.txt";	
+String name,password;	
+public static void main(String[] args) throws IOException {		
+Scanner input = new Scanner(System.in);		
+try {		//	
+String s = "//home//ends//denglu.txt";			
+liu4_1 l4 = new liu4_1();			
+File f = new File(l4.s);			
+if (!f.exists()) {				
+f.createNewFile();			
+}			
+System.out.print("请输入用户名:");			
+l4.name = input.next();			
+System.out.print("请输入密码:");			
+l4.password = input.next();			
+RandomAccessFile raf = new RandomAccessFile(new File(l4.s), "rw"); // 以读写的方式追求			
+raf.seek(raf.length());			
+raf.writeBytes(l4.name);			
+raf.writeBytes(";");			
+raf.writeBytes(l4.password);			
+raf.writeBytes(";");		
+} 
+catch (IOException e) {			
+e.printStackTrace();		
+}	
+}
+}

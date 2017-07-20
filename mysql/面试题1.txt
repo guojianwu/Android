@@ -1,0 +1,219 @@
+思考：
+取出每个栏目下的最贵的商品？
+一条select语句实现
+       #查询每个栏目下价格最高的
+
+
+
+select * from goods group by cat_id order by shop_price;
+
+
+select * from goods group by cat_id;-------取出每个栏目最先的商品
+
+
+
+select * from goods order by cat_id,shop_price desc;
+
+select cat_id,goods_name,shop_price from goods order by cat_id,shop_price desc;
+
+
+
+select cat_id,goods_name,shop_price from goods order by cat_id,shop_price desc group by cat_id;
+
+
+
+
+
+where ----group by ----having ----order by ---limit
+
+
+
+
+select cat_id,goods_name,shop_price from goods order by cat_id,shop_price desc;------标记为A语句
+
+我们可以把A语句执行结果作为一张表Abiao
+
+
+select * from Abiao group by cat_id;
+
+--
+
+select * from (select cat_id,goods_name,shop_price from goods order by cat_id,shop_price desc) as tmp group by cat_id;
+
+
+
+create table xiangsi like goods;
+insert into xiangsi
+select * from goods order by cat_id,shop_price desc;
+
+
+
+
+
+
+if语句
+
+delimiter //
+create procedure hello_if1(in x int) 
+begin 
+if x=1 then select * from goods;
+elseif x=2 then select 2;
+else select 3;
+end if;
+end 
+//
+
+
+
+case 语句
+
+create procedure hello_case(in x int)
+begin
+case x
+when 1 then select 1;
+when 2 then select 2;
+else select 3;
+end case; 
+end 
+
+
+while 语句
+
+create procedure hello_while(out sum int)
+begin
+declare i int default 1;
+declare s int default 0;
+while i<=100 do
+set s=s+i;
+set i=i+1;
+end while;
+set sum =s;
+end
+
+
+ call hello_while(@s);
+ select @s ;
+
+@-----表示定义
+s-----只是一个标识符（可以任意变动）
+
+
+
+
+
+
+1.一道SQL语句面试题，关于group by
+表内容：
+2005-05-09 胜
+2005-05-09 胜
+2005-05-09 负
+2005-05-09 负
+2005-05-10 胜
+2005-05-10 负
+2005-05-10 负
+
+如果要生成下列结果, 该如何写sql语句?
+
+             胜      负
+2005-05-09    2       2
+2005-05-10    1       2
+
+
+
+select  rq as '',   '胜',  '负' from tmp1 group by rq;
+
+
+select  rq as '',   as'胜',   as'负' from tmp1 group by rq;
+
+
+select  rq as '', sum(case when shengfu ='胜' then 1 else 0 end)  as'胜', sum(case when shengfu ='负' then 1 else 0 end)  as'负' from tmp1 group by rq;
+
+
+
+select  rq as '', sum(shengfu='胜')  as'胜', sum(shengfu ='负')  as'负' from tmp1 group by rq;
+
+
+ select goods_id as '',cat_id as '胜',goods_name as '负' from goods where goods_id >30;
+
+
+
+select goods_id as '',cat_id*3  as '胜',goods_name as '负' from goods where goods_id >30;
+
+
+
+
+create table tmp1(
+rq varchar(10),
+shengfu char(1)
+);
+
+
+insert into tmp1
+values
+('2005-05-09','胜'),
+('2005-05-09','胜'),
+('2005-05-09','负'),
+('2005-05-09','负'),
+('2005-05-10','胜'),
+('2005-05-10','负'),
+('2005-05-10','负');
+
+
+
+create table mianshi3(
+语文 tinyint not null default 0,
+数学 tinyint not null default 0,
+英语 tinyint not null default 0
+);
+
+insert into mianshi3
+values
+(70,80,58);
+
+select 语文,数学,英语 from mianshi3;
+
+select (case when 语文>=80 then '优秀'
+             when 语文<=60 then '及格'
+             else '不及格'
+             end)as'语文',
+       (case when 数学>=80 then '优秀'
+             when 数学<=60 then '及格'
+             else '不及格'
+             end)as'数学',
+       (case when 英语>=80 then '优秀'
+             when 英语<=60 then '及格'
+             else '不及格'
+             end)as'英语'
+from mianshi3;
+       
+
+
+
+
+
+create table tb1(
+id char(2),
+num int
+);
+
+insert into tb1
+values
+('d',11),
+('e',24),
+('f',42);
+
+
+select id,sum(num) from (select * from ta union all select * from tb)as tmp group by id;
+
+
+
+select goods_id,cat_id,goods_name,shop_price from goods where cat_id =3 order by shop_price desc;
+
+
+(select goods_id,cat_id,goods_name,shop_price from goods where cat_id =4 order by shop_price desc)
+union
+(select goods_id,cat_id,goods_name,shop_price from goods where cat_id =3 order by shop_price desc);
+
+
+
+

@@ -1,0 +1,56 @@
+create table ww(
+id  int,
+proid int,
+proname varchar(10)
+)charset utf8;
+
+
+
+insert into ww
+values
+(1,1,'M'),
+(1,2,'F'),
+(2,1,'N'),
+(2,2,'G'),
+(3,1,'B'),
+(3,2,'A');
+
+mysql> select * from ww;
++------+-------+---------+
+| id   | proid | proname |
++------+-------+---------+
+|    1 |     1 | M       |
+|    1 |     2 | F       |
+|    2 |     1 | N       |
+|    2 |     2 | G       |
+|    3 |     1 | B       |
+|    3 |     2 | A       |
++------+-------+---------+
+6 rows in set (0.00 sec)
+
+select id,(case proid when 1  then proname else 0 end) as pro2 from ww
+select id,
++------+------+
+| id   | pro2 |
++------+------+
+|    1 | M    |
+|    1 | 0    |
+|    2 | N    |
+|    2 | 0    |
+|    3 | B    |
+|    3 | 0    |
++------+------+
+6 rows in set (0.00 sec)
+
+max(case proid  when 1  then proname else 0 end) as pro1,
+ max(case proid  when 2  then proname else 0 end) as pro2
+from ww group by id ;
++------+------+------+
+| id   | pro1 | pro2 |
++------+------+------+
+|    1 | M    | F    |
+|    2 | N    | G    |
+|    3 | B    | A    |
++------+------+------+
+3 rows in set (0.00 sec)
+

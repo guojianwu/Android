@@ -1,0 +1,15 @@
+TYPE=VIEW
+query=select `g00`.`name` AS `name`,`g00`.`dename` AS `dename`,max(`g00`.`score`) AS `max(score)` from `mugua`.`g00` where (not(`g00`.`name` in (select `g01`.`name` from `mugua`.`g01`))) group by `g00`.`dename`
+md5=13b863226332fb8fc195041c68205a4d
+updatable=0
+algorithm=0
+definer_user=root
+definer_host=localhost
+suid=2
+with_check_option=0
+timestamp=2015-11-19 06:47:21
+create-version=1
+source=select name,dename,max(score) from g00 where name not in (select  name from g01) group by dename
+client_cs_name=gb2312
+connection_cl_name=gb2312_chinese_ci
+view_body_utf8=select `g00`.`name` AS `name`,`g00`.`dename` AS `dename`,max(`g00`.`score`) AS `max(score)` from `mugua`.`g00` where (not(`g00`.`name` in (select `g01`.`name` from `mugua`.`g01`))) group by `g00`.`dename`

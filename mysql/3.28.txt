@@ -1,0 +1,124 @@
+现在有两张表：
+Departmente表中嵌入记录
+部门号 部门名称
+A001 人力资源部
+A002 财务部
+
+Employee表中嵌入记录 
+员工号 姓名 部门号 成绩
+001 张三 A001 90
+002 李四 A001 90
+003 王五 A001 80
+004 张飞 A002 70
+005 刘备 A002 60
+006 关羽 A002 50
+现请问：
+写视图，求各部门的前2名，显示员工号、成绩
+
+
+create table dep(
+de char(4),
+dename varchar(5)
+);
+
+
+insert into dep
+values
+('A001','人力资源部'),
+('A002','财务部');
+
+
+
+create table em(
+id char(3),
+name varchar(10),
+de  char(4),
+score tinyint
+);
+
+
+
+insert into em
+values
+('001','张三','A001',90),
+('002','李四','A001',90),
+('003','王五','A001',80),
+('004','张飞','A002',70),
+('005','刘备','A002',60),
+('006','关羽','A002',50);
+
+
+
+第一种方案：
+
+创建一个视图----关于左连接后再排序的结果
+create algorithm =temptable view g00 as select id,name,dename,score from em left join dep on dep.de =em.de order by dename,score desc;
+
+对于进行分组，取出每个部门的第一名
+select * from g00 group by dename;
+
+创建一个临时视图 g01-----g00分组后的结果
+create algorithm =temptable view g01 as select * from g00 group by dename;
+
+
+对于视图g00，去掉每一个部门的第一名
+取出每个部门的第一名叫什么-------张三、张飞----select name from g01;
+
+(去掉第一名，剩下的）
+select id,name,dename,score from g00 where name not in (select name from g01);
+
+
+
+再创建一个视图g02
+
+create view g02 as select id,name,dename,score from g00 where name not in (select name from g01);
+
+
+对于g02进行分组----取出每个部门第一名之外的所有人的第一名（第二名）
+ select * from g02 group by dename;
+
+
+第一名和第二名的结果放在一起
+
+(select * from g01 ) union all (select * from g02 group by dename);
+
+
+
+
+第二种方案：
+
+将部门分离----将财务部和人力资源部分开
+
+select id,name,dename,score from em left join dep on dep.de =em.de where dename ='财务部' order by score desc;-----财务部
+
+select id,name,dename,score from em left join dep on dep.de =em.de where dename ='人力资源部' order by score desc;-----人力资源部
+
+把上面两式变成视图 g000  g001
+
+create view  g000 as select id,name,dename,score from em left join dep on dep.de =em.de where dename ='财务部' order by score desc;
+create view  g001 as select id,name,dename,score from em left join dep on dep.de =em.de where dename ='人力资源部' order by score desc;
+
+
+取出每个部门的前两名
+
+select * from g000  limit 2;-----取财务部的前两名
+select * from g001  limit 2;-----取人力资源部的前两名
+
+
+
+将其联合
+
+(select * from g000  limit 2) union all (select * from g001 limit 2);
+
+
+
+
+
+
+
+
+
+
+
+
+

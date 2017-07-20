@@ -1,0 +1,15 @@
+TYPE=VIEW
+query=select `g01`.`name` AS `name`,`g01`.`dename` AS `dename`,`g01`.`max(score)` AS `max(score)` from `mugua`.`g01` union select `g02`.`name` AS `name`,`g02`.`dename` AS `dename`,`g02`.`max(score)` AS `max(score)` from `mugua`.`g02` order by `dename`
+md5=a908c08d7b17da803d26f50560915d8b
+updatable=0
+algorithm=0
+definer_user=root
+definer_host=localhost
+suid=2
+with_check_option=0
+timestamp=2015-11-19 06:55:24
+create-version=1
+source=select * from g01 union select * from g02 order by dename
+client_cs_name=gb2312
+connection_cl_name=gb2312_chinese_ci
+view_body_utf8=select `g01`.`name` AS `name`,`g01`.`dename` AS `dename`,`g01`.`max(score)` AS `max(score)` from `mugua`.`g01` union select `g02`.`name` AS `name`,`g02`.`dename` AS `dename`,`g02`.`max(score)` AS `max(score)` from `mugua`.`g02` order by `dename`

@@ -1,0 +1,56 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript" language="JavaScript">
+       //每点击li节点  --会弹出对应文本节点的值
+        //1、获取所有li的节点
+       window.onload=function(){
+            var linodes=document.getElementsByTagName("li");
+           // alert(linodes.length);
+            //2、第二步，使用for循环遍历得到没一个文本的节点
+           for (var i=0;i<linodes.length;i++){
+
+               //3、为每一个节点添加onclick函数
+               linodes[i].onclick=function(){
+
+               //4、在响应函数中获取当前节点的文本节点的文本值
+
+               //5、alert打印
+                  //alert(linodes[i].firstChild.nodeValue);
+
+                   //this表示正在响应的节点
+                  alert(this.firstChild.nodeValue);
+
+                  // alert(linodes[1].firstChild.nodeValue);
+
+               }
+           }
+
+
+
+
+       }
+    </script>
+
+</head>
+<body>
+<p>你喜欢哪个城市</p>
+<ul id="city">
+    <li id="bj" name="beijing" onclick="dianji()">北京</li>
+    <li>上海</li>
+    <li>东京</li>
+    <li>首尔</li>
+</ul>
+<br><br>
+<p>你喜欢哪款游戏？</p>
+<ul id="game">
+    <li id="rl">红警</li>
+    <li>红警2</li>
+    <li>红警3</li>
+    <li>红警4</li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+
+    <script>
+        function InitImage()
+        {
+            document.getElementById("gameTab2").style.display="none";
+            document.getElementById("mobileTab1").style.display="none";
+            document.getElementById("game").style.display="none";
+        }
+         /*
+        function showGame(a,b)
+        {
+            document.getElementById("gameTab2").style.display=a;
+            document.getElementById("mobileTab1").style.display=a;
+            document.getElementById("game").style.display=a;
+
+            document.getElementById("gameTab1").style.display=b;
+            document.getElementById("mobileTab2").style.display=b;
+            document.getElementById("mobile").style.display=b;
+
+
+        }
+
+        function showMobile(){
+            document.getElementById("gameTab1").style.display="block";
+            document.getElementById("mobileTab2").style.display="block";
+            document.getElementById("mobile").style.display="block";
+
+            document.getElementById("gameTab2").style.display="none";
+            document.getElementById("mobileTab1").style.display="none";
+            document.getElementById("game").style.display="none";
+
+
+        }
+        */
+
+
+        function TabChange(show,hidden)
+        {
+            document.getElementById("show").style.display="block";
+
+
+            document.getElementById("hidden").style.display="none";
+
+
+        }
+
+    </script>
+</head>
+<body onload="InitImage()">
+<table align="center">
+   <tr>
+       <td>
+           <img id="gameTab1" src="images/gameTab1.jpg" onmousemove="TabChange('game','mobile')">
+           <img id="gameTab2" src="images/gameTab2.jpg" >
+       </td>
+       <td>
+           <img id="mobileTab1" src="images/mobileTab1.jpg" onmousemove="TabChange('game','mobile')">
+           <img id="mobileTab2" src="images/mobileTab2.jpg">
+       </td>
+
+   </tr>
+    <tr>
+        <td colspan="2">
+            <img id="mobile" src="images/mobile.jpg">
+            <img id="game" src="images/game.jpg">
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <img src="images/fly.jpg">
+        </td>
+    </tr>
+
+
+</table>
+</body>
+</html>

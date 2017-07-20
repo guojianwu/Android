@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script type="text/javascript" language="JavaScript">
+    function showif(){
+    var s=parseFloat(document.mys.src.value) ;
+    if(s>=60&&s<75){
+        alert("及格");
+    }
+    else if(s>=75&&s<90){
+        alert("良好");
+    }
+    if(s>=90&&s<=100){
+        alert("优秀");
+    }
+    else
+    alert("不及格");
+    }
+</script>
+<form name="mys" method="post">
+    <input type="text" name="src"/>
+    <input type="button" name="mybutton" onclick="showif()"/>
+
+</form>
+</body>
+</html>

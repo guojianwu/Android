@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+<script type="text/javascript" language="JavaScript">
+        window.onload=function(){
+
+            //获取所有li节点
+           var liNodes=document.getElementsByTagName("li");
+
+            for(var i=0;i<liNodes.length;i++){
+
+                //手动为每一个li节点添加一个index
+                        liNodes[i].index=i;
+                        liNodes[i].onclick=function(){
+                          //  alert(this.firstChild.nodeValue);
+
+                        //找到和当前对应的li节点
+                        //alert(this.index);
+                        //this.index表示当前节点的index值
+                        //设当前节点对应的那个li节点的index为
+                            var target=0;
+                            if(this.index<4){
+                                target=4+this.index;
+                            }
+                            else{
+                                target=this.index-4;
+                            }
+                            replaceChild(liNodes[this.index],liNodes[target]);
+
+
+
+
+
+
+                }
+            }
+
+
+            //自定义互换两个节点的函数
+            function replaceChild(aNode,bNode){
+                //获取aNode和bNode的父节点   使用热烈placeChild方法进行互换
+                var apar=aNode.parentNode;
+                var bpar=bNode.parentNode;
+                if(apar  &&  bpar){
+                    var aNode2=aNode.cloneNode(true);
+                    //多次交换
+                    aNode2.onclick=aNode.onclick;
+                    aNode2.index=aNode.index;
+
+                    bpar.replaceChild(aNode2,bNode);
+                    apar.replaceChild(bNode,aNode);
+                }
+
+            }
+
+
+
+        }
+        //  alert(this.firstChild.nodeValue);
+
+</script>
+</head>
+<body>
+<p>你喜欢哪个城市</p
+        >
+<ul id="city">
+    <li id="bj" name="beijing">北京</li>
+    <li>上海</li>
+    <li>东京</li>
+    <li>首尔</li>
+
+</ul>
+<br><br>
+<p>你喜欢哪款游戏？</p>
+<ul id="game">
+    <li id="rl">红警</li>
+    <li>红警2</li>
+    <li>红警3</li>
+    <li>红警4</li>
+</ul>
+</body>
+</html>

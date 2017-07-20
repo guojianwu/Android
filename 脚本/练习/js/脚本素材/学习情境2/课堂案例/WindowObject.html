@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>用户登录</title>
+</head>
+<script type="text/javascript">
+var f=confirm("确认关闭窗口吗？");
+if(f==true)
+	{
+	alert("即将退出！");
+	window.close();
+	}
+else
+ {
+	alert("欢迎继续使用！");
+ }
+	
+function openWindow()
+{
+	window.status="系统当前状态，正在打开窗口……";
+	if(window.screen.width==1024 && window.screen.height==768)
+		open("registPage.html","第二个窗口","toolbars=0,location=0,statusbar=0,menubars=0,scrollbars=1,width=350,height=300");
+	else
+		window.alert("请设置分辨率为1024*768，然后再打开");
+}
+
+function closeWindow()
+{
+	if(window.confirm("你确定要退出系统吗？"))
+		window.close();	
+}
+</script>
+<body onload="">
+<center>
+<br />
+<table  width="70%">
+  <tr>
+  	<td colspan="2" bgcolor="#0066FF" height="20px"></td>
+  </tr>
+  <tr>
+  	<td height="30px" width="50%" align="right">用户名：</td><td align="left"><input type="text" /></td>
+  </tr>
+  <tr>
+  	<td  height="30px" align="right">密&nbsp;码：</td><td align="left"><input type="text" /></td>
+  </tr>
+    <tr>
+  	<td colspan="2" bgcolor="#009999" height="40px" align="center">
+	<input type="button" value="登录"  />
+	<input type="button" value="注册" onclick="openWindow()" />
+    <input type="button" value="退出" onclick="closeWindow()" />
+ </td>
+  </tr>
+</table>
+</center>
+</body>
+</html>

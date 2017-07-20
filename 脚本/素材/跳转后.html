@@ -1,0 +1,35 @@
+<!--
+history对象
+1、history 对象
+window.history是包含浏览器历史的集合
+2、history方法
+history.back() ---与在浏览器中点击后退按钮相同
+history.forward () ---与在浏览器中点击向前 按钮相同
+history.go()-----进入历史的某个界面
+-->
+
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<!--首先在测试界面   点击跳转按钮   就会跳转到liulanqi1.html   
+再liulanqi1.html中点击按钮 回到原来的测试界面-->
+<form>
+    <input type="text" id="username">
+</form>
+<button id="btn" onclick="safe()">按钮</button>
+<script>
+    function safe(){
+        var name = document.getElementById("username").value;
+        if(name=="hello"){
+            history.go(-1);// 跳转到前一个界面
+        }else {
+            alert("输入错误");
+        }
+    }
+</script>
+</body>
+</html>

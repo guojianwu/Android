@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+   <img src="images/one.jpg" id="webjx1" border ="1"/>
+  <script  language="JavaScript">
+      GoGoGo("webjx1");
+      function GoGoGo(objName)
+      {
+          var img =document.getElementById(objName);
+          img.style.position="absolute";//设置图片的位置为绝对位置
+         // img.style.left =parseInt(window.screen.availWidth - img.style.width)+"px";
+         // img.style.top=100+"px";
+          //Math.random()表示0-1的随机数
+          //img.style.left表示图片距左边界的值 img.style.top表示图片距上边界的值
+          img.style.left =parseInt(window.screen.availWidth * Math.random())+"px";
+          img.style.top =parseInt(window.screen.availHeight * Math.random())+"px";
+          //xDir 表示水平方向  yDir表示垂直方向
+          img.setAttribute("xDir",1);
+          img.setAttribute("yDir",1);
+          window.setInterval("randPosition("+objName+")","10");
+      }
+
+      function randPosition(obj)
+      {
+          //x表示图片距左边界的值 若x=0表示图片刚好挨着左边界
+          // 若x=window.screen.availWidth-obj.width表示图片刚好挨着右边界
+          var x =parseInt(obj.style.left);
+        //  alert(x);
+          //当x >= window.screen.availWidth-obj.width表示图片已经到达右边界
+         // alert(window.screen.availWidth);
+          if(x >= window.screen.availWidth-obj.width)
+            obj.setAttribute("xDir",-1);
+          //当x<=0表示图片已经到达左边界
+          if(x<=0)
+          obj.setAttribute("xDir",1);
+          x+= parseInt(obj.getAttribute("xDir"));
+          //alert(x);
+
+          // y表示的是图片距上边界的值
+          var y =parseInt(obj.style.top);
+          if(y>=window.screen.availHeight-obj.height-160)
+             obj.setAttribute("yDir",-1);
+          if(y<=0)
+            obj.setAttribute("yDir",1);
+          y+=parseInt(obj.getAttribute("yDir"));
+
+          obj.style.left =x +"px";
+          obj.style.top=y +"px";
+
+
+      }
+  </script>
+</body>
+</html>

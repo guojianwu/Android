@@ -1,0 +1,125 @@
+
+<!--//        利用Dom对象控制HTML-->
+<!--//        1、方法-->
+<!--//           getElementsByName()----获取name-->
+<!--//           getElementsByTagName()----获取元素-->
+<!--//           getAttribute()-----获取元素属性-->
+<!--//           setAttribute()-----设置元素属性-->
+<!--//           childNodes()-----访问子节点-->
+<!--//           parentNode()-----访问父节点-->
+<!--//           createElement()---创建元素节点-->
+<!--//           createTextNode()---创建文本节点-->
+<!--//           insertBefore()---插入节点-->
+<!--//           removeChild()---删除节点-->
+<!--//           OffsetHeight---网页尺寸-->
+<!--//           scrollHeight---网页尺寸-->
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+
+      <p name="pn">hello</p>
+      <p name="pn">hello</p>
+      <p name="pn">hello</p>
+      <p name="pn">hello</p>
+      <p name="pn">hello</p>
+
+
+     <a id="aid1" name ="你好" title="得到了a标签的属性">Hello</a>
+     <a id="aid2">aid2</a>
+
+      <ul><li>1</li><li>2</li><li>3</li></ul>
+
+      <ul>
+          <li>11</li>
+          <li>22</li>
+          <li>33</li>
+      </ul>
+
+      <div id="div">
+           <p id="pid">div的p元素</p>
+      </div>
+
+<script type="text/javascript" language="javascript">
+
+    //获取元素的name
+    function getName()
+    {
+        var  count = document.getElementsByName("pn");
+        alert(count.length);
+
+        //修改第一个元素的信息
+        var p=count[0];
+        p.innerHTML="world";
+
+    }
+   // getName();
+
+
+    //获取元素标签属性
+    function getAttr()
+    {
+        var anode =document.getElementById("aid1");
+        var attr =anode.getAttribute("title");
+        var attr1=anode.getAttribute("name");
+        //alert(attr);
+        alert(attr1);
+    }
+ // getAttr();
+
+
+    //设置元素属性
+    function setAttr()
+    {
+        var anode =document.getElementById("aid2");
+        anode.setAttribute("title","动态设置a的标签属性");
+        var attr =anode.getAttribute("title");
+        alert(attr);
+    }
+   // setAttr();
+
+    //访问子节点
+    function getChildNodes()
+    {
+        var childnode=document.getElementsByTagName("ul")[0].childNodes;
+        // 这里0 表示第一个ul标签
+        alert(childnode.length);
+
+    }
+    //getChildNodes();
+
+//    <div id="div">
+//    <p id="pid">div的p元素</p>
+//    </div>
+
+    //  访问父节点
+    function  getParentnode()
+    {
+        var div =document.getElementById("pid");
+        alert(div.parentNode.nodeName);
+    }
+    //getParentnode();
+
+    // 创建节点---添加节点
+    function createNode()
+    {
+        var body =document.body;
+
+        var input =document.createElement("input");
+        input.type="button";
+        input.value="按钮";
+
+//        <input type="button" value="按钮"/>
+
+        body.appendChild(input);
+    }
+
+    createNode();
+</script>
+
+</body>
+</html>

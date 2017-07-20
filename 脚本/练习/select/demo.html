@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        function number(){
+            var obj=document.getElementById("select");
+            ///obj.options[obj.selectedIndex]=new Option("55555");
+            obj.options.add(new Option("66666666"));
+        }
+    </script>
+</head>
+<body>
+<select id="select">
+    <option>1111111</option>
+    <option>2222222</option>
+    <option>3333333</option>
+    <option>4444444</option>
+</select>
+
+<input type="button" name="button" value="查看结果" onclick="number()">
+
+</body>
+</html>

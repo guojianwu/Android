@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>无标题文档</title>
+<script type="text/javascript">
+function disptime()
+{
+	var today=new Date();
+	var yy=today.getFullYear();
+	var mth=today.getMonth();
+	var dd=today.getDate();
+	var wd=today.getDay()
+	var hh=today.getHours();
+	var mm=today.getMinutes();
+	var ss=today.getSeconds();
+	
+	if(mm>=0 && mm<=9)
+		document.getElementById("myclock").innerHTML="<h1>今天是："+yy+"年"+mth+"月"+dd+"日 星期"+wd+"&nbsp;<br>现在时间："+hh+":0"+mm+":"+ss+"</h1>";
+	else
+		document.getElementById("myclock").innerHTML="<h1>今天是："+yy+"年"+mth+"月"+dd+"日 星期"+wd+"&nbsp;<br>现在时间："+hh+":"+mm+":"+ss+"</h1>";
+	
+	if(ss>=0 && ss<=9)
+		document.getElementById("myclock").innerHTML="<h1>今天是："+yy+"年"+mth+"月"+dd+"日 星期"+wd+"&nbsp;<br>现在时间："+hh+":"+mm+":0"+ss+"</h1>";
+	else
+		document.getElementById("myclock").innerHTML="<h1>今天是："+yy+"年"+mth+"月"+dd+"日 星期"+wd+"&nbsp;<br>现在时间："+hh+":"+mm+":"+ss+"</h1>";
+	
+	
+	setTimeout("disptime()",1000);
+}
+</script>
+</head>
+<body onload="disptime()">
+<div id="myclock"  ></div>
+</body>
+</html>

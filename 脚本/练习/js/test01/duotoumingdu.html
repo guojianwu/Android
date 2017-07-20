@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+       div{
+            width: 200px;
+            height: 200px;
+            background: red;
+            margin: 10px;
+           float: left;
+            filter: alpha(opacity:30);
+            opacity: 0.3;
+        }
+    </style>
+
+    <script>
+        window.onload=function() {
+            var oDiv = document.getElementsByTagName("div");
+            for (var i = 0; i < oDiv.length; i++) {
+                oDiv[i].timer = null;
+                //oDiv[i].alpha=30;
+                oDiv[i].onmouseover = function () {
+                    move(this, 100);
+                }
+                oDiv[i].onmouseout = function () {
+                    move(this, 30);
+                }
+            }
+
+            // var timer=null;
+            var alpha = 30;
+
+            function move(obj, mobiao) {
+                clearInterval(obj.timer);
+                obj.timer = setInterval(function () {
+                    var speed = 0;
+                    if (alpha > mubiao) {
+                        speed = -10;
+                    }
+                    else {
+                        speed = 10;
+                    }
+                    if (alpha == mobiao) {
+                        clearInterval(obj.timer);
+                    }
+                    else {
+                        alpha += speed;
+                        obj.style.filter = 'alpha(opacity:' + alpha + ')';
+                        obj.style.opacity = alpha / 100;
+                    }
+                }, 30)
+            }
+
+        }
+
+    </script>
+</head>
+<body>
+
+<div id="div1"></div>
+<div id="div2"></div>
+<div id="div3"></div>
+<div id="div4"></div>
+
+</body>
+</html>

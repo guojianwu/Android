@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        function move(fbox,tbox)
+        {
+            for(var i=0;i<fbox.options.length;i++)
+            {
+                if(fbox.options[i].selected && fbox.options[i].value !="")
+                {
+                    var no=new Option();
+                    no.value=fbox.options[i].value;
+                    no.text=fbox.options[i].text;
+                    tbox.options[tbox.options.length]=no;
+                    fbox.options[i].value="";
+                    fbox.options[i].text="";
+                }
+
+            }
+
+            Bumpup(fbox);
+            SortD(tbox);
+        }
+        function  Bumpup(fbox){
+
+
+            for(var i=0;i<fbox.options.length;i++){
+                if(fbox.options[i].value==""){
+                    for(var j=i;j<fbox.options.length-1;j++){
+                        fbox.options[j].value=fbox.options[j+1].value;
+                        fbox.options[j].text=fbox.options[j+1].text;
+                    }
+                    var ln=i;
+                    break;
+                }
+            }
+            if(ln<fbox.options.length){
+                fbox.options.length-=1;
+                Bumpup(fbox);
+            }
+
+        }
+
+        function SortD(box){
+
+            var temp_opts=new Array();
+            var temp=new Object();
+            for(var i=0;i<box.options.length;i++){
+                temp_opts[i]=box.options[i];
+
+            }
+            for(var x=0;x<temp_opts.length;x++)
+            {
+                for(var y=(x+1);y<temp_opts.length;y++)
+                {
+                      if(temp_opts[x].text>temp_opts[y].text)
+                      {
+                          temp=temp_opts[x].text;
+                          temp_opts[x].text=temp_opts[y].text;
+                          temp_opts[y].text=temp;
+                      }
+                }
+            }
+            for(var i=0;i<box.options.length;i++)
+            {
+                box.options[i].value=temp_opts[i].value;
+                box.options[i].text=temp_opts[i].text;
+            }
+        }
+
+    </script>
+
+
+</head>
+<body>
+   <form sction="" method="post">
+       <table>
+           <tr>
+               <td>
+                   <select size="5" name="list1">
+                       <option value="ASP">ASP</option>
+                       <option value="PHP">PHP</option>
+                       <option value="JSP">JSP</option>
+                   </select>
+               </td>
+               <td>
+                   <input type="button" value=">>" onclick="move(this.form.list1,this.form.list2)" name="B1">
+                   <input type="button" value="<<" onclick="move(this.form.list2,this.form.list1)" name="B2">
+               </td>
+
+               <td>
+                   <select size="5" name="list2">
+                       <option value="JAVA">JAVA</option>
+                       <option value="DELPHI">DELPHI</option>
+                       <option value="C++">C++</option>
+                   </select>
+               </td>
+
+           </tr>
+
+       </table>
+
+   </form>
+</body>
+</html>

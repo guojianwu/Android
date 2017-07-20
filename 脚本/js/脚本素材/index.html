@@ -1,0 +1,63 @@
+<!--获取指定元素节点-->
+
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript" language="JavaScript">
+        //获取指定元素的节点
+      window.onload= function () {
+
+          //1、获取id为bj的那个节点
+          //注意：在编写html文档时，需确保id属性值是唯一的
+          //该方法是document对象的方法
+          var bjnode=document.getElementById("bj");
+          alert(bjnode);
+
+          //2、获取所有li节点
+          //使用标签名获取指定节点的集合
+          //该方法是node接口的方法，任何一个节点都有这个方法
+          var linodes=document.getElementsByTagName("li");
+          alert(linodes.length);
+
+          var citynode=document.getElementById("city");
+          var citynodes=citynode.getElementsByTagName("li");
+          alert(citynodes.length);
+
+          //3、根据html文档元素的name 属性名来获取指定节点的集合
+          var gendernodes=document.getElementsByName("gender");
+          alert(gendernodes.length);
+
+          var bjnodes=document.getElementsByName("beijing");
+          alert(bjnodes.length);
+      }
+    </script>
+</head>
+<body>
+   <p>你喜欢哪个城市？</p>
+
+  <ul id="city">
+      <li id="bj" name="beijing">北京</li>
+      <li>上海</li>
+      <li>东京</li>
+      <li>首尔</li>
+  </ul>
+
+ <br><br>
+  <p> 你喜欢哪款游戏？</p>
+
+  <ul id="game">
+      <li id="rl">红警</li>
+      <li>实况</li>
+      <li>极品飞车</li>
+      <li>魔兽</li>
+  </ul>
+
+
+<br><br>
+  gender:
+  <input type="radio" name="gender" value="male"/>Male
+  <input type="radio" name="gender"  value="female"/>Female
+</body>
+</html>

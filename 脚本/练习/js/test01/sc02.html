@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+    <title>删除</title>
+<script>
+  /*  function del(obj) {
+        var table=obj.parentNode.parentNode.parentNode;
+        table.removeChild(obj.parentNode.parentNode);
+    }*/
+    window.onload=function(){
+        var tabnode=document.getElementById("tab");
+        var aNode=tabnode.getElementsByTagName("a");
+        for(var i=0; i< aNode.length;i++){
+
+
+        }
+    }
+</script>
+</head>
+
+<body>
+<table id="tab">
+    <tr >
+        <td>1</td>
+        <td>1</td>
+        <td>1</td>
+        <td><a id="1" href="#" onclick="javascript:del(this);">删除</a></td>
+    </tr>
+    <tr >
+        <td>2</td>
+        <td>2</td>
+        <td>2</td>
+        <td><a id="2" href="#" onclick="javascript:del(this);">删除</a></td>
+    </tr>
+    <tr >
+        <td>3</td>
+        <td>3</td>
+        <td>3</td>
+        <td><a id="3" href="#" onclick="javascript:del(this);">删除</a></td>
+    </tr>
+</table>
+</body>
+</html>

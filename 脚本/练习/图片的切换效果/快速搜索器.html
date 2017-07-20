@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        function select(place){
+            alert(1)
+        }
+    </script>
+</head>
+<body>
+<form name="myform">
+<table width="517" height="289" align="center" background="images/51table_back.gif">
+    <tr>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td height="32" font-size="12px">&nbsp;地点
+            <input name="placeButton" value="选择/修改" class="picButton" onclick="show()">
+
+
+        </td>
+    </tr>
+    <tr>
+        <td>
+          <img src="images/next.jpg" width="180" height="186">
+            <p>&nbsp;</p>
+
+
+        </td>
+    </tr>
+</table>
+</form>
+
+<div id="placeLayer">
+    <table width="476" heigth="109" style="font-size: 12px">
+        <tr>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td><a href="#">关闭</a></td>
+        </tr>
+        <tr>
+            <td><a href="javascript:select('北京')">北京</a></td>
+            <td><a href="javascript:select('上海')">上海</a></td>
+            <td><a href="javascript:select('广州')">广州</a></td>
+            <td><a href="javascript:select('重庆')">重庆</a></td>
+        </tr>
+        <tr>
+            <td><a href="javascript:select('成都')">成都</a></td>
+            <td><a href="javascript:select('徐州')">徐州</a></td>
+            <td><a href="javascript:select('深圳')">深圳</a></td>
+            <td><a href="javascript:select('珠海')">珠海</a></td>
+        </tr>
+
+    </table>
+
+</div>
+
+</body>
+</html>

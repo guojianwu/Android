@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript">
+        //需求：节点互换   北京和红警节点  互换
+        window.onload =function(){
+            //找到北京节点和红警节点
+            var bjNode=document.getElementById("bj");
+            var rlNode=document.getElementById("rl");
+            //要互换节点  需要父节点的replacechild方法来互换
+            //所以要找到 北京节点的父节点和红警节点的父节点 然后调用replaceChild方法来操作
+            var cityNode =document.getElementById("city");
+            var gameNode =document.getElementById("game");
+            //实现bj节点和rl节点的互换
+           // cityNode.replaceChild(bjNode,rlNode);
+            //克隆bjnode
+            var bjNode2 =bjNode.cloneNode(true);
+            gameNode.replaceChild(bjNode2,rlNode);
+            cityNode.replaceChild(rlNode,bjNode);
+        }
+
+        function replaceEach(aNode,bNode)
+        {
+            var aParent =aNode.parentNode;
+
+        }
+
+
+    </script>
+</head>
+<body>
+<p>你喜欢哪个城市？</p>
+<ul id="city">
+    <li id="bj" name="beijing">北京</li>
+    <li>上海</li>
+    <li>东京</li>
+    <li>首尔</li>
+</ul>
+
+<br><br>
+<p>你喜欢哪款单击游戏？</p>
+<ul id="game">
+    <li id="rl">红警</li>
+    <li>实况</li>
+    <li>极品飞车</li>
+    <li>魔兽</li>
+</ul>
+
+<br><br>
+
+</body>
+</html>

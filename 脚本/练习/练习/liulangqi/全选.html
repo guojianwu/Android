@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        window.onload=function(){
+            //点击选择框
+            var selectInput=document.getElementsByClassName("check"); //获取所有复选框
+            var checkAllInputs=document.getElementsByClassName("check-all check");//获取全选框
+            for(var i=0;i<selectInput.length;i++)
+            {
+                //为所有的复选框添加一个onclick函数
+                selectInput[i].onclick=function()
+                {
+                    if(this.className=="check-all check")  //表示点击了全选框
+                    {
+                        for(var j=0;j<selectInput.length;j++)
+                        {
+                            selectInput[j].checked=this.checked;
+                        }
+                    }
+
+                }
+            }
+        }
+
+    </script>
+</head>
+<body>
+<p><img src="images/top.jpg" width="1004" height="173"></p>
+<table border="1" width="987" height="268">
+    <tr>
+        <td colspan="2">
+            <label>
+                <input class="check-all check" type="checkbox"  value="全选">全选
+            </label>
+        </td>
+    </tr>
+    <tr>
+        <td width="113">
+            <div align="center">
+                <input class="check-one check" type="checkbox" id="isbuy0" value="checkbo">
+            </div>
+        </td>
+        <td width="856">
+            <img src="images/1.jpg" width="748" height="75">
+        </td>
+    </tr>
+    <tr>
+        <td width="113">
+            <div align="center">
+                <input class="check-one check" type="checkbox" id="isbuy1" value="checkbo">
+            </div>
+        </td>
+        <td width="856">
+            <img src="images/2.jpg" width="748" height="75">
+        </td>
+    </tr>
+    <tr>
+        <td width="113">
+            <div align="center">
+                <input class="check-one check" type="checkbox" id="isbuy2" value="checkbo">
+            </div>
+        </td>
+        <td width="856">
+            <img src="images/3.jpg" width="748" height="75">
+        </td>
+    </tr>
+    <tr>
+        <td width="113">
+            <div align="center">
+                <input class="check-one check" type="checkbox" id="isbuy3" value="checkbo">
+            </div>
+        </td>
+        <td width="856">
+            <img src="images/4.jpg" width="748" height="75">
+        </td>
+    </tr>
+
+
+</table>
+</body>
+</html>

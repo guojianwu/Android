@@ -1,0 +1,60 @@
+<!--setInterval  在执行一段代码之后  经过那个固定的时间间隔后会重复执行
+    setTimeout只执行一次那段代码
+
+-->
+
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        .borde{
+            width: 450px;
+            height: 25px;
+            border: 1px solid #2bb7e4;
+            margin: 100px auto;
+        }
+        #bar{
+            background:lawngreen;
+            text-align: center;
+
+
+            height: 100%;
+
+
+        }
+    </style>
+
+
+
+</head>
+<body>
+
+<div class="borde">
+    <div id="bar" style="width:0%"></div>
+</div>
+<script type="text/javascript" language="JavaScript">
+
+
+        var bar=setInterval(function(){
+            smation();
+
+        },50);
+
+    function smation(){
+        var  Bar=document.getElementById("bar");
+        // var timer=null;
+        Bar.style.width=parseInt(Bar.style.width)+1+"%";
+        Bar.innerHTML=Bar.style.width;
+        if(Bar.style.width=="100%"){
+            window.clearInterval(bar);
+        }
+
+
+
+    }
+
+</script>
+</body>
+</html>

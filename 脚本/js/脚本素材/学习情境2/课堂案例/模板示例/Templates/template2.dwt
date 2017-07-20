@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<!-- TemplateBeginEditable name="doctitle" -->
+<title>模板页</title>
+<!-- TemplateEndEditable -->
+<link href="../CSS/templateStyle.css" rel="stylesheet" type="text/css" />
+<!-- TemplateBeginEditable name="head" --><!-- TemplateEndEditable -->
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+<center>
+<table width="75%" height="62"  border="0"   cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="222" align="left"><img src="../tempimg/logo.jpg"  /></td>
+    <td width="468"  height="31" align="right"><!-- TemplateBeginEditable name="topimages" -->
+      <div id="topimg"></div><!-- TemplateEndEditable --></td> 
+    <td width="318" >
+	<div id="div1">
+      <table width="305" height="62" border="0" cellpadding="0" cellspacing="0">
+        <tr>
+          <td width="213"  align="left">&nbsp;账号
+           
+            <input type="text" name="textfield" />
+            </td>
+          <td width="98"> <input type="button" name="Submit" value="登录" class="btn" />  </td>
+        </tr>
+        <tr> 
+          <td align="left">&nbsp;密码     <input type="text" name="textfield2" />   </td>
+          <td><a href="Register.html"><b>注册</b></a></td>
+        </tr>
+      </table>
+    </div>
+	</td>    
+  </tr>
+</table>
+
+<div id="div3"><table width="100%" border="0" cellpadding="0" cellspacing="0"  >
+  <tr>
+    <td width="4%"><img src="../tempimg/querylogo.jpg" width="37" height="34" /></td>
+    <td width="35%">
+      <input type="text" name="textfield3" class="txt" />
+    </td>
+    <td width="29%" align="left"><input name="" type="button" value="搜索" class="btn2" /></td>
+    <td width="5%">热搜：</td>
+    <td width="27%" align="left">logo 模板 资源 视频 原创 商务 个人 培训 </td>
+  </tr>
+</table>
+</div> 
+
+<div id="div2">
+  <ul id="ul1">
+    <li><a href="../home.html">论坛门户</a></li>
+    <li><a href="#">论坛广场</a></li>
+    <li><a href="#">个人中心</a></li>
+    <li><a href="#">排行榜</a></li>
+    <li><a href="#">网站模板</a></li>
+    <li><a href="#">资源下载</a></li>
+  </ul>   
+  <select name="select"  style="margin:5px 1px; float:right; ">
+  <option>快捷导航</option>
+  </select> 
+</div>
+
+
+
+
+<!-- TemplateBeginEditable name="EditRegion3" -->
+<div id="content">此处为可编辑内容区域</div>
+<!-- TemplateEndEditable -->
+<hr noshade="noshade" width="75%" size="1px" />
+<div id="div4"><table border="0" cellpadding="0" cellspacing="0" width="100%" >
+  <tr>
+    <td align="center">WebDIY网站内容版权归属易远工作室所有， http://www.yiyuan.net.cn。Copyright 2012-2015 </td>
+    </tr>
+  <tr>
+    <td align="center">EMail：xiaocai2012@163.com</td>
+    </tr>
+</table>
+</div>
+</center>
+</form>
+</body>
+</html>

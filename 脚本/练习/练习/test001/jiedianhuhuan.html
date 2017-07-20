@@ -1,0 +1,85 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript">
+        //需求；节点互换   北京和红警1节点互换
+        window.onload=function(){
+            //找到北京节点和红警节点
+            var bjNode2=document.getElementById("bj");
+            var num=0;
+            bjNode2.onclick=function(){
+                num++;
+
+                var bjNode=document.getElementById("bj");
+                var rlNode=document.getElementById("rl");
+                if(num/2!==0){
+
+                    replaceChild(bjNode,rlNode);
+                }
+                else if(num/2==0){
+                    replaceChild(rlNode,bjNode);
+                }
+
+
+            }
+        }
+
+         /*
+        function huhuan(){
+            var bjNode=document.getElementById("bj");
+            var rlNode=document.getElementById("rl");
+
+            //互换节点   需要父节点的replacechild方法来互换
+            //所以要找到  北京的父节点和红警节点的父节点  让后调用replacechild方法来操作
+            var cityNode=document.getElementById("city");
+            var gameNode=document.getElementById("game");
+
+
+            //实现bj节点和rl节点互换
+            //克隆bjNode
+            var bjNode2=bjNode.cloneNode(true);
+            gameNode.replaceChild(bjNode2,rlNode);
+            cityNode.replaceChild(rlNode,bjNode);
+        }
+        */
+
+
+        //自定义互换两个节点的函数
+        function replaceChild(aNode,bNode){
+        //获取aNode和bNode的父节点   使用热烈placeChild方法进行互换
+            var apar=aNode.parentNode;
+            var bpar=bNode.parentNode;
+            if(apar  &&  bpar){
+                var aNode2=aNode.cloneNode(true);
+                bpar.replaceChild(aNode2,bNode);
+                apar.replaceChild(bNode,aNode);
+            }
+
+         }
+
+    </script>
+</head>
+<body>
+<p>你喜欢哪个城市</p
+        >
+<ul id="city">
+    <li id="bj" name="beijing">北京</li>
+    <li>上海</li>
+    <li>东京</li>
+    <li>首尔</li>
+
+</ul>
+<br><br>
+<p>你喜欢哪款游戏？</p>
+<ul id="game">
+    <li id="rl">红警</li>
+    <li>红警2</li>
+    <li>红警3</li>
+    <li>红警4</li>
+</ul>
+
+</body>
+</html>

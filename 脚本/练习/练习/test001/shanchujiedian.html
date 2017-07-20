@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+
+    <script type="text/javascript" language="JavaScript">
+        window.onload=function(){
+            var liNodes=document.getElementsByTagName("li");
+            for(var i=0;i<liNodes.length;i++){
+                liNodes[i].onclick=function(){
+                    var flag=confirm("确定删除"+this.firstChild.nodeValue+"的信息吗？");
+                    if(flag){
+                        this.parentNode.removeChild(this);
+                    }
+                }
+
+            }
+        }
+
+
+    </script>
+</head>
+<body>
+<p>你喜欢哪个城市</p
+        >
+<ul id="city">
+    <li id="bj" name="beijing">北京</li>
+    <li>上海</li>
+    <li>东京</li>
+    <li>首尔</li>
+
+</ul>
+<br><br>
+<p>你喜欢哪款游戏？</p>
+<ul id="game">
+    <li id="rl">红警</li>
+    <li>红警2</li>
+    <li>红警3</li>
+    <li>红警4</li>
+</ul>
+</body>
+</html>

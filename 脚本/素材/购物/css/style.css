@@ -1,0 +1,154 @@
+/*文字字体设置*/
+body
+{
+    color:#666;
+    font:12px/180% Arial, Helvetica, sans-serif, "新宋体";
+
+    /*字体大小/行高*/
+}
+
+/*表格内容代码 */
+.catbox
+{
+    width:940px;
+    margin:100px auto;
+}
+
+.catbox table
+{
+    text-align:center;
+    width:100%;
+    /*width 100%表示940px*/
+}
+
+.catbox table th
+{
+    border:1px solid #CADEFF;
+    background: #e2f2ff;
+    height:30px;
+}
+.catbox table td
+{
+    border:1px solid #CADEFF;
+    /*padding: 10px;*/
+    color:#444;
+}
+
+
+/*表格内容代码 */
+/*复选框的宽度*/
+.checkbox
+{
+    width:60px;
+}
+
+
+/*商品的图片和文字布局*/
+.goods
+{
+    width:300px;
+}
+.goods span
+{
+    width:180px;
+    margin-top:20px;
+    /*margin:20px;*/
+    text-align:left;
+    float:left;
+}
+.goods img
+{
+    width:100px;
+    height:80px;
+    margin-right:10px;
+    float:left;
+    /*float：left 把图片放在左边*/
+}
+
+.price
+{
+    width:130px;
+}
+
+
+.count
+{
+    width:90px;
+}
+
+
+/*将多少件商品的文本框变小点*/
+.count input
+{
+    width:50px;
+    height:25px;
+    border:1px solid #aaa;
+    /*字体颜色*/
+    color:#343434;
+    text-align:center;
+    background-color:#fff;
+}
+
+
+
+
+/**/
+
+/*将 +  -  输入   放在同一行*/
+.count .add, .count input, .count .reduce
+{
+    float:left;
+
+}
+.count .add, .count .reduce
+{
+    height:23px;
+    width:17px;
+    border:1px solid #e5e5e5;
+    background:#f0f0f0;
+    text-align:center;
+    line-height:23px;
+    color:#444;
+}
+/*给 +  —  增加一些引导*/
+.count .add:hover, .count .reduce:hover
+{
+    color:#f50;
+    /*z-index:3;*/
+    border-color:#f60;
+    cursor:pointer;
+    /*当鼠标移到那个位置变成小手*/
+}
+
+
+
+
+/**/
+/*让结算  合计  已选商品  多个div在同一行   需要设置float为left*/
+.fl
+{
+    float:left;
+}
+.fr
+{
+    float:right;
+}
+
+.foot  #priceTotal, .foot #selectedTotal
+{
+    /*颜色设置为红色*/
+    color:red;
+    font-weight:bold;
+}
+
+
+.foot
+{
+    font:18px/180% Arial, Helvetica, sans-serif, "新宋体";
+    /*margin-top:0px;*/
+    color:#666;
+    height:48px;
+    border:1px solid #c8c8c8;
+    background-color:#eaeaea;
+}
+

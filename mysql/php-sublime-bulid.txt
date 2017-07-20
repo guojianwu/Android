@@ -1,3 +1,0 @@
-{ 
-	"cmd": ["C:\\phpStudy\\php53\\php.exe","$file"],"file_regex":"php$","selector":"source.php"
-}

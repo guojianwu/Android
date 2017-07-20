@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        table{
+            border-collapse: collapse;
+        }
+        th{
+            width: 100px;
+        }
+        tr{
+            text-align: center;
+        }
+    </style>
+
+    <script type="text/javascript" language="JavaScript">
+        window.onload=function(){
+           //
+            var aNode=document.getElementsByTagName("a");
+
+                for(var i=0;i<aNode.length;i++){
+                    aNode[i].onclick=function(){
+
+
+                        var tabNode=document.getElementById("tab");
+                      //  var flag=confirm("确定删除"+this.firstChild.nodeValue+"的信息吗？");
+                       // if(flag){
+                        //}
+                        for(var j=0;j<tabNode.length;j++){
+                            tabNode.deleteRow[j];
+                        }
+
+                       // this.parentNode.removeChild(this);
+                    }
+                }
+
+
+
+
+
+
+
+        }
+    </script>
+</head>
+<body>
+<table id="tab" border="1">
+    <tbody>
+    <tr>
+        <th>name</th>
+        <th>Email</th>
+        <th>satay</th>
+        <th>&nbsp;</th>
+    </tr>
+    <tr>
+        <td>tom</td>
+        <td>12345</td>
+        <td>8000</td>
+       <td><a>delete</a></td>
+    </tr>
+    <tr>
+        <td>mou</td>
+        <td>45678</td>
+        <td>9410</td>
+        <td><a>delete</a></td>
+    </tr>
+
+    </tbody>
+</table>
+
+</body>
+</html>

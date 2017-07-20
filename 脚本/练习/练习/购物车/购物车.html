@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>购物车</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="catbox">
+    <table border="1" id="cartTable">
+        <thead>
+            <tr>
+                <th>
+                    <label>
+                        <input class="ckeck-all check" type="checkbox"/>&nbsp;&nbsp;全选
+                    </label>
+                </th>
+                <th>商品</th>
+                <th>单价</th>
+                <th>数量</th>
+                <th>小计</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+          <tr>
+              <td>
+                  <input class="check-one check" type="checkbox"/>
+              </td>
+              <td>
+                  <img src="images1/1.jpg">
+                  <span>Casio/卡西欧 EX-TR350</span>
+              </td>
+              <td class="price">
+                  5999.88
+              </td>
+              <td class="count">
+                  <span class="reduce"></span>
+                  <input class="input" type="text" value="1">
+                  <span class="add">+</span>
+              </td>
+              <td class="subtotal">
+                  5999.88
+              </td>
+              <td class="operation">
+                  <span class="delete">删除</span>
+              </td>
+          </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
